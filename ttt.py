@@ -11,8 +11,8 @@ def show():
   print "----------"
   print board[6],'|',board[7],'|',board[8]
 
-show()
-while True:
+def p1turn():
+
   input = raw_input("Player 1 Select a spot: ")
   input = int(input)
 
@@ -20,7 +20,9 @@ while True:
     board[input] = 'x'
   else:
     print "This spot is taken"
-  show()
+    p1turn()
+
+def p2turn():
 
   input2 = raw_input("Player 2 Select a spot: ")
   input2 = int(input2)
@@ -29,6 +31,13 @@ while True:
     board[input2] = 'o'
   else:
     print "This spot is taken"
+    p2turn()
+
+show()
+while True:
+  p1turn()
+  show()
+  p2turn()
   show()
 
 
