@@ -21,6 +21,10 @@ def p1turn():
   input = raw_input("Player 1 Select a spot: ")
   input = int(input)
 
+  if type(input) != int:
+    print "not valid input"
+    p1turn()
+
   if board[input] != 'x' and board[input] != 'o':
     board[input] = 'x'
     xs.append(input)
